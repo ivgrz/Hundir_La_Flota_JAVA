@@ -1,9 +1,9 @@
-public class Casillero {
+public class Casilla {
     private Nave nave;
     private boolean visitada;
 
 
-    public Casillero(){
+    public Casilla(){
         this.nave = null;
         this.visitada = false;
 
