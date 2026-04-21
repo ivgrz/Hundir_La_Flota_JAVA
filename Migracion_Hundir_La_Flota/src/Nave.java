@@ -1,8 +1,8 @@
 public class Nave {
-    public String nombre;
-    public String tipo;
-    public int tamano;
-    public int vida;
+    private String nombre;
+    private String tipo;
+    private int tamano;
+    private int vida;
 
 
     public void setVida(int vida) {
