@@ -61,6 +61,7 @@ public class Juego {
         System.out.println("Atacando en las coordenadas " + " " + x + " " + y);
         int resultado = tablero.comprobar_impacto(x,y);
         mostrar_resultado(resultado);
+        tablero.mostrar();
     }
 
 }

@@ -4,6 +4,7 @@ public class Tablero {
     public static final int HUNDIDO = 2;
 
     private Casilla[][] casillero;
+    public int tamano;
     public Tablero(){
         this(10);
 
@@ -18,9 +19,9 @@ public class Tablero {
          *             tamano (int): Dimensión del tablero (por defecto 10x10)
          */
         this.casillero = new Casilla[tamano][tamano];
-
+        this.tamano = tamano;
         for(int i = 0; i < tamano; i++){
-            for (int j = 0; j < tamano; i++){
+            for (int j = 0; j < tamano; j++){
                 this.casillero[i][j] = new Casilla();
             }
         }
@@ -150,11 +151,30 @@ public class Tablero {
             String resultado = casilla.getNave().recibir_disparo();
             System.out.println("[LOG] " + casilla.getNave().getNombre() + " " + resultado);
 
-            if(resultado.equals("TOCADO")){
+            if(resultado.equals("HUNDIDO")){
                 return HUNDIDO;
             }
             return TOCADO;
 
+        }
+    }
+    public void mostrar() {
+        System.out.println("  0 1 2 3 4 5 6 7 8 9"); // Encabezado de columnas
+        for (int i = 0; i < tamano; i++) {
+            System.out.print(i + " "); // Número de fila
+            for (int j = 0; j < tamano; j++) {
+                Casilla c = this.casillero[i][j];
+
+                // Lógica de visualización
+                if (!c.isVisitada()) {
+                    System.out.print("~ "); // Agua no visitada
+                } else if (c.getNave() == null) {
+                    System.out.print("O "); // Agua disparada (fallo)
+                } else {
+                    System.out.print("X "); // Impacto en nave
+                }
+            }
+            System.out.println(); // Salto de línea al terminar la fila
         }
     }
 }
