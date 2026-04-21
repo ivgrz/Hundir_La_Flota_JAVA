@@ -1,4 +1,8 @@
 public class Nave {
+    /**
+     *
+     Clase que crea una nave con sus parametros, ademas tiene metodos "recibir_disparo" y "restar_vida"
+     */
     private String nombre;
     private String tipo;
     private int tamano;
