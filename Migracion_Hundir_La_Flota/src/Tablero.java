@@ -63,7 +63,7 @@ public class Tablero {
          *
          *         Args:
          *             nave (Nave): Objeto nave a colocar
-         *             x (int): Coordenada X inicial (fila)
+         *             x (i nt): Coordenada X inicial (fila)
          *             y (int): Coordenada Y inicial (columna)
          *             orientacion (str): Orientación de la nave
          *                               "H" para horizontal (expande en columnas)
@@ -159,22 +159,22 @@ public class Tablero {
         }
     }
     public void mostrar() {
-        System.out.println("  0 1 2 3 4 5 6 7 8 9"); // Encabezado de columnas
+        System.out.println("  0 1 2 3 4 5 6 7 8 9");
         for (int i = 0; i < tamano; i++) {
-            System.out.print(i + " "); // Número de fila
+            System.out.print(i + " ");
             for (int j = 0; j < tamano; j++) {
                 Casilla c = this.casillero[i][j];
 
-                // Lógica de visualización
+
                 if (!c.isVisitada()) {
-                    System.out.print("~ "); // Agua no visitada
+                    System.out.print("~ ");
                 } else if (c.getNave() == null) {
-                    System.out.print("O "); // Agua disparada (fallo)
+                    System.out.print("O ");
                 } else {
-                    System.out.print("X "); // Impacto en nave
+                    System.out.print("X ");
                 }
             }
-            System.out.println(); // Salto de línea al terminar la fila
+            System.out.println();
         }
     }
 }
