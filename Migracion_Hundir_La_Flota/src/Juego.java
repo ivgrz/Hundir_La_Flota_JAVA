@@ -10,7 +10,7 @@ public class Juego {
      * Coloca las naves en el tablero en posiciones predefinidas.
      */
     public void inicializando_naves(){
-        System.out.println("Inicializando naves de la partida");
+        System.out.println("Inicializando naves de la partida...");
 
         Nave por1 = new Nave("Enterprise", "portaaviones", 5, 5);
 
