@@ -1,3 +1,6 @@
+/**
+ * Logica de funcionamiento de juego
+ */
 public class Juego {
     private Tablero tablero;
     public Juego(){

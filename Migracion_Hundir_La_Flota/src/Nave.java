@@ -1,3 +1,6 @@
+/**
+ * Creacion de la clase Nave
+ */
 public class Nave {
     /**
      *

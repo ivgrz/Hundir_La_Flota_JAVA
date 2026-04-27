@@ -1,3 +1,6 @@
+/**
+ * Creacion de clase casilla para Tablero
+ */
 public class Casilla {
     private Nave nave;
     private boolean visitada;
