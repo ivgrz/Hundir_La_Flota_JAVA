@@ -165,7 +165,7 @@ public class Tablero {
             for (int j = 0; j < tamano; j++) {
                 Casilla c = this.casillero[i][j];
 
-                // Lógica de visualización
+
                 if (!c.isVisitada()) {
                     System.out.print("~ "); // Agua no visitada
                 } else if (c.getNave() == null) {
@@ -174,7 +174,7 @@ public class Tablero {
                     System.out.print("X "); // Impacto en nave
                 }
             }
-            System.out.println(); // Salto de línea al terminar la fila
+            System.out.println();
         }
     }
 }
