@@ -1,9 +1,6 @@
 /**
  * Clase que crea la casilla del Tablero
- */
-
-
-/**
+ *
  * @author Ivan Guiterrez
  * @version 1.0
  * Creacion de clase casilla para Tablero
