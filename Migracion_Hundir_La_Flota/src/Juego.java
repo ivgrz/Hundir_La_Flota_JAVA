@@ -1,8 +1,6 @@
 /**
  * Clase que maneja la logica del juego completo
- */
-
-/**
+ *
  * @author Ivan Gutierrez
  * @version 1.0
  * Creacion de clase Juego
