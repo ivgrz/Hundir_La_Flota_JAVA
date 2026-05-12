@@ -1,4 +1,8 @@
 /**
+ * Clase que crea el objeto Nave
+ */
+
+/**
  * @author Ivan Gutierrez
  * @version 1.0
  * Creacion del objeto Nave

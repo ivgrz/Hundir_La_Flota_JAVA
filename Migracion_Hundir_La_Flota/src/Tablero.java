@@ -1,4 +1,8 @@
 /**
+ * Clase que crea una matriz en formato de Tablero
+ */
+
+/**
  * @author Ivan Gutierrez
  * @version 1.0
  * Creacion del Tablero de juego

@@ -1,4 +1,8 @@
+/**
+ * Clase que ofrece vista para usuario
+ */
 import java.util.Scanner;
+
 
 /**
  * @author Ivan Gutierrez
