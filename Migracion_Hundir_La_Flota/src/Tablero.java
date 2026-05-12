@@ -1,26 +1,33 @@
 /**
+ * @author Ivan Gutierrez
+ * @version 1.0
  * Creacion del Tablero de juego
   */
 public class Tablero {
+    /**
+     * Propiedades de clase Tablero
+     */
     public static final int AGUA = 0;
     public static final int TOCADO = 1;
     public static final int HUNDIDO = 2;
 
     private Casilla[][] casillero;
     public int tamano;
+
+    /**
+     * Constructor
+     */
     public Tablero(){
         this(10);
 
     }
+
+    /**
+     * Constructor
+     * @param tamano: int
+     */
     public Tablero(int tamano){
-        /**
-         * Constructor de la clase Tablero.
-         *         Inicializa una matriz de Casillas vacías (sin naves).
-         *         Las naves se colocan posteriormente usando el método colocar_nave().
-         *
-         *         Args:
-         *             tamano (int): Dimensión del tablero (por defecto 10x10)
-         */
+
         this.casillero = new Casilla[tamano][tamano];
         this.tamano = tamano;
         for(int i = 0; i < tamano; i++){
@@ -32,50 +39,16 @@ public class Tablero {
 
 
     }
-    /*
-    *     def colocar_nave(self, nave, x, y, orientacion):
-        """
-        Coloca una nave en el tablero en las coordenadas especificadas.
-        Marca las casillas ocupadas por la nave según su tamaño y orientación.
 
-        Args:
-            nave (Nave): Objeto nave a colocar
-            x (int): Coordenada X inicial (fila)
-            y (int): Coordenada Y inicial (columna)
-            orientacion (str): Orientación de la nave
-                              "H" para horizontal (expande en columnas)
-                              "V" para vertical (expande en filas)
-
-        Example:
-            tablero.colocar_nave(submarino, 0, 0, "H")  # Coloca horizontalmente desde (0,0)
-            tablero.colocar_nave(buque, 5, 3, "V")      # Coloca verticalmente desde (5,3)
-        """
-        if orientacion == "H":
-            for i in range(nave.vida):
-                self.casillero[x][y + i].nave = nave
-        elif orientacion == "V":
-            for i in range(nave.vida):
-                self.casillero[x + i][y].nave = nave
-    *
-    *
-    * */
+    /**
+     * Metodo colocar_nave
+     * @param nave: Nave
+     * @param x: int
+     * @param y: int
+     * @param orientacion: String
+     */
     public void colocar_nave(Nave nave,int x,int y, String orientacion){
-        /**
-         * Coloca una nave en el tablero en las coordenadas especificadas.
-         *         Marca las casillas ocupadas por la nave según su tamaño y orientación.
-         *
-         *         Args:
-         *             nave (Nave): Objeto nave a colocar
-         *             x (int): Coordenada X inicial (fila)
-         *             y (int): Coordenada Y inicial (columna)
-         *             orientacion (str): Orientación de la nave
-         *                               "H" para horizontal (expande en columnas)
-         *                               "V" para vertical (expande en filas)
-         *
-         *         Example:
-         *             tablero.colocar_nave(submarino, 0, 0, "H")  # Coloca horizontalmente desde (0,0)
-         *             tablero.colocar_nave(buque, 5, 3, "V")      # Coloca verticalmente desde (5,3)
-         */
+
         if (orientacion.equals("H")){
             for(int i = 0; i < nave.getVida(); i++){
                 this.casillero[x][y+i].setNave(nave);
@@ -88,55 +61,14 @@ public class Tablero {
             System.out.println("Orientacion invalida");
         }
     }
-    /*
-    * CODIGO PYTHON
-    def comprobar_impacto(self, x, y):
-        """
-        Comprueba si hay una nave en las coordenadas indicadas.
-        Si la casilla ya fue visitada, no descuenta vida.
-        Si hay nave, llama a su método recibir_disparo().
 
-        Args:
-            x (int): Coordenada X del disparo
-            y (int): Coordenada Y del disparo
-
-        Returns:
-            int: Resultado del disparo (AGUA=0, TOCADO=1, HUNDIDO=2)
-        """
-        print(f"[LOG] estoy en tablero comprobando impacto ({x}, {y})")
-        casilla = self.casillero[x][y]
-
-        if casilla.visitada:
-            print("[LOG] Casilla ya disparada anteriormente, no se descuenta vida")
-            return self.AGUA
-
-        casilla.visitada = True
-
-        if casilla.nave is None:
-            print("[LOG] Agua")
-            return self.AGUA
-        else:
-            resultado = casilla.nave.recibir_disparo()
-            print(f"[LOG] {casilla.nave.nombre} {resultado}")
-            if resultado == "Hundido":
-                return self.HUNDIDO
-            return self.TOCADO
-
-    *
-    * */
+    /**
+     * Comprueba el impacto en la posicion de la nave
+     * @param x: int
+     * @param y: int
+     * @return int
+     */
     public int comprobar_impacto(int x, int y){
-        /**
-         * Comprueba si hay una nave en las coordenadas indicadas.
-         *         Si la casilla ya fue visitada, no descuenta vida.
-         *         Si hay nave, llama a su método recibir_disparo().
-         *
-         *         Args:
-         *             x (int): Coordenada X del disparo
-         *             y (int): Coordenada Y del disparo
-         *
-         *         Returns:
-         *             int: Resultado del disparo (AGUA=0, TOCADO=1, HUNDIDO=2)
-         */
         System.out.println("Comprobando impacto en " + x + " " + y);
         Casilla casilla = this.casillero[x][y];
 
@@ -161,6 +93,10 @@ public class Tablero {
 
         }
     }
+
+    /**
+     * Muestra la matriz en formato de Tablero de juego
+     */
     public void mostrar() {
         System.out.println("  0 1 2 3 4 5 6 7 8 9"); // Encabezado de columnas
         for (int i = 0; i < tamano; i++) {

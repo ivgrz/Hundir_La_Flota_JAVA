@@ -1,16 +1,24 @@
 /**
- * Logica de funcionamiento de juego
+ * @author Ivan Gutierrez
+ * @version 1.0
+ * Creacion de clase Juego
  */
 public class Juego {
+    /**
+     * Propiedades de clase Juego
+     */
     private Tablero tablero;
+
+    /**
+     * Constructor
+     */
     public Juego(){
         this.tablero = new Tablero();
         inicializando_naves();
     }
 
     /**
-     * Crea e inicializa todas las naves del juego.
-     * Coloca las naves en el tablero en posiciones predefinidas.
+     * Metodo que inicializa las naves en el Tablero
      */
     public void inicializando_naves(){
         System.out.println("Inicializando naves de la partida...");
@@ -36,13 +44,13 @@ public class Juego {
         tablero.colocar_nave(sub3, 7, 6, "H");
         tablero.colocar_nave(sub4, 9, 5, "H");
     }
+
+    /**
+     * Metodo que muestra el resultado del disparo en la posicion de la Nave dentro del Tablero
+     * @param resultado: int
+     */
     public void mostrar_resultado(int resultado){
-        /**
-         * Muestra por pantalla el resultado de un disparo.
-         *
-         *         Args:
-         *             resultado (int): Resultado del disparo (AGUA=0, TOCADO=1, HUNDIDO=2)
-         */
+
         if(resultado == tablero.AGUA){
             System.out.println("Agua");
         } else if (resultado == tablero.TOCADO) {
@@ -53,14 +61,14 @@ public class Juego {
             
         }
     }
+
+    /**
+     * Metodo que realiza el disparo dandole las coordenadas de posicion de la nave por parametro
+     * @param x: int
+     * @param y: int
+     */
     public void lanzar_ataque(int x,int y){
-        /**
-         * Ejecuta un disparo en las coordenadas indicadas.
-         *
-         *         Args:
-         *             x (int): Coordenada X del disparo
-         *             y (int): Coordenada Y del disparo
-         */
+
         System.out.println("Atacando en las coordenadas " + " " + x + " " + y);
         int resultado = tablero.comprobar_impacto(x,y);
         mostrar_resultado(resultado);
