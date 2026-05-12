@@ -1,6 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * @author Ivan Gutierrez
+ * @version 1.0
+ * Visualizacion del juego "Hundir La FLota"
+ */
 public class Main {
+    /**
+     * Metodo main que ofrece una vista al usuario
+     * @param args
+     */
     public static void main(String[] args) {
         Juego j = new Juego();
         Scanner s = new Scanner(System.in);
